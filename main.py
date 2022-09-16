@@ -521,8 +521,26 @@ while iniciar_trivia == True:
     
   print("\033[1;34m    PROCESO COMPLETADO     \033[0;0m")
   print()
+  print('\033[1;36mTengo una ultima propuesta para ti, a continuacion aparecera una ruleta que te puede sumar o restar puntos entre el -20 hasta +20 , si escribes SI jugaras la ruleta , si respondes NO o cualquier otra tecla te quedaras con el mismo puntaje\033[0;0m')
+  print()
+  time.sleep(2)
+  suerte = input('\033[1;33mCual es tu respuesta?: \033[0;0m').upper()
+  ruleta = random.randint(0,30)
+  signo = random.randint(0,1)
   
-  
+  if suerte == "SI" and signo == 0:
+    respuestas_correctas += ruleta
+    print('\033[1;33mAl parecer la fuerza te ha acompañado, a tu puntaje se le sumara',ruleta,'puntos\033[0;0m')
+  elif suerte == 'SI' and signo == 1:
+    respuestas_correctas -= ruleta
+    print('\033[1;31mQue pena, hoy no es tu dia de suerte, mejor no salgas de tu casa, a tu puntaje se le restara',ruleta,'puntos\033[0;0m')
+  elif suerte == "NO":
+    respuestas_correctas=respuestas_correctas
+    print("\033[1;34mAl parecer no quieres dejar las cosas al azar, esta bien tu puntaje no cambiara\033[0;0m")
+  else:
+    respuestas_correctas=respuestas_correctas
+    print("\033[1;34mAl parecer no quieres dejar las cosas al azar, esta bien tu puntaje no cambiara\033[0;0m")
+    
   if respuestas_correctas < 20:
     print("Tu puntaje final es: " +   "\033[1;31m" + str(respuestas_correctas))
   elif respuestas_correctas >=20 and respuestas_correctas <40:
