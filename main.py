@@ -505,7 +505,7 @@ while iniciar_trivia == True:
     respuestas_correctas = respuestas_correctas
   print("Te demoraste: " , str(round((end - start),2)) , " segundos")
   print()
-  print("Procesando tu puntaje final")
+  print("Procesando tu puntaje actual")
   print()
   some_list= [10,20,30,40,65,70,80,100]
   for i in some_list:
@@ -521,7 +521,9 @@ while iniciar_trivia == True:
     
   print("\033[1;34m    PROCESO COMPLETADO     \033[0;0m")
   print()
-  print('\033[1;36mTengo una ultima propuesta para ti, a continuacion aparecera una ruleta que te puede sumar o restar puntos entre el -20 hasta +20 , si escribes SI jugaras la ruleta , si respondes NO o cualquier otra tecla te quedaras con el mismo puntaje\033[0;0m')
+  print("Tu puntaje actual es:",respuestas_correctas)
+  print()
+  print('\033[1;36mTengo una ultima propuesta para ti, a continuacion aparecera una ruleta que te puede sumar o restar hasta 30 puntos , si escribes SI jugaras la ruleta , si respondes NO o cualquier otra tecla te quedaras con el mismo puntaje\033[0;0m')
   print()
   time.sleep(2)
   suerte = input('\033[1;33mCual es tu respuesta?: \033[0;0m').upper()
@@ -530,23 +532,31 @@ while iniciar_trivia == True:
   
   if suerte == "SI" and signo == 0:
     respuestas_correctas += ruleta
+    print()
     print('\033[1;33mAl parecer la fuerza te ha acompañado, a tu puntaje se le sumara',ruleta,'puntos\033[0;0m')
+    print()
   elif suerte == 'SI' and signo == 1:
     respuestas_correctas -= ruleta
+    print()
     print('\033[1;31mQue pena, hoy no es tu dia de suerte, mejor no salgas de tu casa, a tu puntaje se le restara',ruleta,'puntos\033[0;0m')
+    print()
   elif suerte == "NO":
     respuestas_correctas=respuestas_correctas
+    print()
     print("\033[1;34mAl parecer no quieres dejar las cosas al azar, esta bien tu puntaje no cambiara\033[0;0m")
+    print()
   else:
     respuestas_correctas=respuestas_correctas
+    print()
     print("\033[1;34mAl parecer no quieres dejar las cosas al azar, esta bien tu puntaje no cambiara\033[0;0m")
+    print()
     
   if respuestas_correctas < 20:
-    print("Tu puntaje final es: " +   "\033[1;31m" + str(respuestas_correctas))
+    print("TU PUNTAJE FINAL ES: " +   "\033[1;31m" + str(respuestas_correctas))
   elif respuestas_correctas >=20 and respuestas_correctas <40:
-    print("\033[0;0mTu puntaje final es: " +  "\033[1;33m" + str(respuestas_correctas))
+    print("\033[0;0mTU PUNTAJE FINAL ES: " +  "\033[1;33m" + str(respuestas_correctas))
   else:
-    print("\033[0;0mTu puntaje final es: " +  "\033[1;32m" + str(respuestas_correctas))
+    print("\033[0;0mTU PUNTAJE FINAL ES: " +  "\033[1;32m" + str(respuestas_correctas))
       
   print("\n\033[1;33m¿Deseas intentar la trivia nuevamente?")
   repetir_trivia = input("Ingresa 'si' para repetir, o cualquier tecla para finalizar: ").lower()
