@@ -551,9 +551,9 @@ while iniciar_trivia == True:
     print("\033[1;34mAl parecer no quieres dejar las cosas al azar, esta bien tu puntaje no cambiara\033[0;0m")
     print()
     
-  if respuestas_correctas < 20:
+  if respuestas_correctas < 25:
     print("TU PUNTAJE FINAL ES: " +   "\033[1;31m" + str(respuestas_correctas))
-  elif respuestas_correctas >=20 and respuestas_correctas <40:
+  elif respuestas_correctas >=25 and respuestas_correctas <50:
     print("\033[0;0mTU PUNTAJE FINAL ES: " +  "\033[1;33m" + str(respuestas_correctas))
   else:
     print("\033[0;0mTU PUNTAJE FINAL ES: " +  "\033[1;32m" + str(respuestas_correctas))
